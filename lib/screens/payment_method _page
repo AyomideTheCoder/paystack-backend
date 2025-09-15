@@ -1,0 +1,102 @@
+import 'package:flutter/material.dart';
+import 'checkout_page.dart';
+
+class PaymentMethodPage extends StatefulWidget {
+  const PaymentMethodPage({super.key});
+
+  @override
+  State<PaymentMethodPage> createState() => _PaymentMethodPageState();
+}
+
+class _PaymentMethodPageState extends State<PaymentMethodPage> {
+  String selectedMethod = 'Card';
+
+  void _selectMethod(String method) {
+    setState(() => selectedMethod = method);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Payment Method'),
+        backgroundColor: Colors.green,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            _buildOption(
+              icon: Icons.credit_card,
+              title: 'Debit/Credit Card',
+              value: 'Card',
+            ),
+            const SizedBox(height: 12),
+            _buildOption(
+              icon: Icons.account_balance_wallet,
+              title: 'Wallet Balance',
+              value: 'Wallet',
+            ),
+            const SizedBox(height: 12),
+            _buildOption(
+              icon: Icons.attach_money,
+              title: 'Cash on Delivery',
+              value: 'Cash',
+            ),
+            const Spacer(),
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (_) => const CheckoutPage()),
+                  );
+                },
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  padding: const EdgeInsets.symmetric(vertical: 14),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                child: const Text('Continue', style: TextStyle(fontSize: 16)),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildOption({
+    required IconData icon,
+    required String title,
+    required String value,
+  }) {
+    return InkWell(
+      onTap: () => _selectMethod(value),
+      child: Container(
+        padding: const EdgeInsets.all(12),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: selectedMethod == value ? Colors.green : Colors.grey.shade300,
+            width: 2,
+          ),
+        ),
+        child: Row(
+          children: [
+            Icon(icon, color: Colors.green),
+            const SizedBox(width: 12),
+            Text(title, style: const TextStyle(fontSize: 16)),
+            const Spacer(),
+            if (selectedMethod == value)
+              const Icon(Icons.check_circle, color: Colors.green),
+          ],
+        ),
+      ),
+    );
+  }
+}

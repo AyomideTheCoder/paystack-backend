@@ -1,0 +1,81 @@
+name: wear_space
+description: A fashion e-commerce app
+publish_to: 'none'
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_svg: ^2.0.10
+  lucide_icons: ^0.257.0
+  cupertino_icons: ^1.0.2
+  image_picker: ^1.1.2
+  provider: ^6.1.2
+  shared_preferences: ^2.3.0
+  intl: ^0.19.0
+  share_plus: ^10.0.0
+  path_provider: ^2.1.4
+  url_launcher: ^6.3.2
+  permission_handler: ^11.3.2
+  file_picker: ^8.1.2
+  image_picker_for_web: ^3.0.5
+  font_awesome_flutter: ^10.7.0
+  cached_network_image: ^3.4.0
+  flutter_local_notifications: ^17.2.1
+  badges: ^3.1.2
+  timeago: ^3.7.0
+  device_info_plus: ^11.0.0
+  supabase_flutter: ^2.5.6
+  pay_with_paystack: ^1.0.6  # Updated to latest compatible version
+  contacts_service: ^0.6.3
+  hive: ^2.2.3
+  hive_flutter: ^1.1.0
+  http: ^1.2.0
+  iconsax: ^0.0.8
+  uuid: ^4.0.0
+  flutter_dotenv: ^5.1.0
+  webview_flutter: ^4.9.0
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  lints: ^4.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - ./.env 
+    - assets/images/wearspace1_logo.png
+    - assets/images/wearspace_logo.png
+    - assets/images/wearspace_banner 1.png
+    - assets/images/wearspace_banner 2.png
+    - assets/images/wearspace_banner 3.png
+    - assets/images/wearspace_banner 4.png
+    - assets/images/splash screen image.jpg
+    - assets/images/sign up picture.jpg
+    - assets/images/login picture.jpg
+    - assets/images/olobe1.jpg
+    - assets/images/olobe2.jpg
+    - assets/images/carouselbanner1.png
+    - assets/images/carouselbanner2.png
+    - assets/images/carouselbanner3.png
+    - assets/images/carouselbanner4.png
+    - assets/images/carouselbanner5.png
+    - assets/images/ASSESSORIES.jpg
+    - assets/images/ATHLEISURE.jpg
+    - assets/images/BAG.jpg
+    - assets/images/CASUAL WEARS.jpg
+    - assets/images/CLOTHES.jpg
+    - assets/images/FORMAL WEAR.jpg
+    - assets/images/JEWELRY.jpg
+    - assets/images/KIDS FASHION.jpg
+    - assets/images/OUTER WEAR.jpg
+    - assets/images/SHOES.jpg
+    - assets/images/SUSTAINABLE APPAREL.jpg
+    - assets/images/SWIMWEAR.jpg
+    - assets/images/UNDERWEAR AND LINGERIE.jpg
+    - assets/images/VINTAGE WEARS.jpg
+    - assets/images/WATCHES.jpg
+    - assets/images/WIGS.jpg
